@@ -22,8 +22,18 @@ function draw(){
 
 	square(70,70,55); 
 	
-	// missing rectangle 
+	triangle(30, 75, 58, 20, 86, 75); 
 
+	point(85,55); 
+
+	line(30, 20, 85, 75); 
+
+	
+
+	// Pacman
+
+	fill(255,100,0);
+	arc(50, 50, 100, 100, 0, QUARTER_PI + PI + (PI/2), PIE);
 
 }
 
