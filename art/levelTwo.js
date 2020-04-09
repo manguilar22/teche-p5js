@@ -1,34 +1,63 @@
+let dim;
 
-let red, green, blue = 0; 
+let t;
 
+function setup(){
 
-function draw() {
+	createCanvas(700,400);
 
-	const r = red.value(); 
-	const g = green.value(); 
-	const b = blue.value(); 
-		
-	background(r, g, b);
-  	text(`Red is equal to ${r}`, red.x * 2+red.width,25);
-  	text(`Green is equal to ${g}`, green.x * 2+green.width , 60);
-  	text(`Blue is equal to ${b}`, blue.x * 2+green.width , 25*3.5);
+	dim = width / 10;
+	background(0);
+	colorMode(HSB,360,100,100);
+	noStroke();
+	ellipseMode(RADIUS);
+	frameRate(1);
 
-
+	t = createSlider(1,10,1);
 
 }
 
 
-function setup() { 
+function draw() {
 
-	createCanvas(900,900); 
-	
-	red = createSlider(1,255,1); 
-	green = createSlider(1,255,1); 
-	blue = createSlider(1,255,1); 
 
-	red.position(20,20); 
-	green.position(20,50); 
-	blue.position(20,80); 
+	background(0);
+	/*
+	for(let i = 0; i<= width; i+=dim){
+		drawGradient(i,200);
+	}
+	*/
 
+	/*
+	for(let i = 0; i <= width; i += dim) {
+		for (let j = 0; j <= height; j += height/4) {
+			drawGradient(i,j);
+		}
+	}
+	*/
+
+
+	for(let i = 0; i <= width; i += dim) {
+		for (let j = 0; j <= height; j += height/t.value()) {
+			drawGradient(i,j);
+		}
+	}
+
+
+}
+
+function drawGradient(x,y) {
+
+
+	let radius = dim / 2;
+
+	let h = random(0,360);
+
+	for(let r = radius; r > 0; --r) {
+		fill(h,90,90);
+		//square(x,y,r**2);
+		ellipse(x,y,r,r);
+		h = (h*1) % 360;
+	}
 
 }

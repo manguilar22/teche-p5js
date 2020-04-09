@@ -1,43 +1,32 @@
-let dim; 
+var angle = 0;
+var slider;
 
-function setup(){
-
-	createCanvas(700,400); 
-	
-	dim = width / 10; 
-	background(0); 
-	colorMode(HSB,360,100,100); 
-	noStroke(); 
-	ellipseMode(RADIUS); 
-	frameRate(1); 
+function setup() {
+  createCanvas(400, 400);
+  slider = createSlider(0, TWO_PI, PI / 4, 0.01);
 }
-
 
 function draw() {
+  background(51);
+  angle = slider.value();
+  stroke(255);
+  translate(200, height);
+  branch(100);
 
-
-	background(0); 
-	for(let i = 0; i <= width; i += dim) {
-		for (let j = 0; j <= height; j += height/4) {
-
-			drawGradient(i,j); 
-		}
-	}
 }
 
-function drawGradient(x,y) {
+function branch(len) {
+  line(0, 0, 0, -len);
+  translate(0, -len);
+  if (len > 4) {
+    push();
+    rotate(angle);
+    branch(len * 0.67);
+    pop();
+    push();
+    rotate(-angle);
+    branch(len * 0.67);
+    pop();
+  }
 
-
-	let radius = dim / 2; 
-
-	let h = random(0,360); 
-	
-	for(let r = radius; r > 0; --r) {
-		fill(h,90,90); 
-		//square(x,y,r**2); 
-		ellipse(x,y,r,r); 
-		h = (h*1) % 360; 
-	}
-	
 }
-

@@ -1,32 +1,46 @@
-var angle = 0;
-var slider;
+let n = 0;
+let d = 0;
+// let dSlider;
 
 function setup() {
   createCanvas(400, 400);
-  slider = createSlider(0, TWO_PI, PI / 4, 0.01);
+  angleMode(DEGREES);
+  //dSlider = createSlider(1,180,1);
 }
 
 function draw() {
-  background(51);
-  angle = slider.value();
+  background(0);
+  translate(width/2,height/2);
   stroke(255);
-  translate(200, height);
-  branch(100);
-
-}
-
-function branch(len) {
-  line(0, 0, 0, -len);
-  translate(0, -len);
-  if (len > 4) {
-    push();
-    rotate(angle);
-    branch(len * 0.67);
-    pop();
-    push();
-    rotate(-angle);
-    branch(len * 0.67);
-    pop();
+  //d = dSlider.value();
+  noFill();
+  beginShape();
+  strokeWeight(1);
+  for (let i = 0; i < 361; i++) {
+    let k = i * d;
+    let r = 150 * sin(n*k);
+    let x = r * cos(k);
+    let y = r * sin(k);
+    vertex(x,y);
   }
+  endShape();
+
+  noFill();
+  stroke(255,0,255, 255);
+  strokeWeight(4);
+  beginShape();
+  for (let i = 0; i < 361; i++) {
+    let k = i;
+    let r = 150 * sin(n*k);
+    let x = r * cos(k);
+    let y = r * sin(k);
+    vertex(x,y);
+  }
+  endShape();
+
+  n += 0.001;
+  d += 0.003;
+
+
 
 }
