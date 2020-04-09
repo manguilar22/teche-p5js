@@ -3,14 +3,14 @@ let m = -1;
 let mC = true;
 
 
-let formulas = {}; 
+let formulas = {};
 
 
 function setup() {
 
         createCanvas(400,400);
 
-        
+
         formulas = {
               animation: () => 3*frameCount%310,
               openMouth: (m) => sin(m)/8+PI/8,
@@ -26,8 +26,9 @@ function setup() {
 
 
 function draw() {
-  
-        const {eyePosition,
+
+        const {
+               eyePosition,
                animation,
                openMouth,
                closeMouth
@@ -49,9 +50,6 @@ function draw() {
 
         //arc(240-eyePosition(m),140-eyePosition(m),15,28,PI*1/2,PI*3/2);
 
-  
-  
+
+
 }
-
-
- 
