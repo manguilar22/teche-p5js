@@ -20,13 +20,9 @@ function draw() {
   const g = gSlider.value();
   const b = bSlider.value();
   background(r, g, b);
-  text('red', rSlider.x * 2 + rSlider.width, 11);
-  text('green', gSlider.x * 2 + gSlider.width, 33);
-  text('blue', bSlider.x * 2 + bSlider.width, 33);
-
-  
-  
-
+  text('red', rSlider.x * 2 + rSlider.width, 35);
+  text('green', gSlider.x * 2 + gSlider.width, 65);
+  text('blue', bSlider.x * 2 + bSlider.width, 95);
 
 }
 

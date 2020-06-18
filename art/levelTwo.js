@@ -18,7 +18,7 @@ function setup(){
 }
 
 
-function draw() {
+function draw(f) {
 
 
 	background(0);
@@ -61,3 +61,10 @@ function drawGradient(x,y) {
 	}
 
 }
+
+let sketch = function(p) {
+	p.setup = setup();
+
+
+};
+new p5(sketch, 'container');

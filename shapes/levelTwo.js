@@ -10,7 +10,6 @@ function setup() {
 
         createCanvas(400,400);
 
-
         formulas = {
               animation: () => 3*frameCount%310,
               openMouth: (m) => sin(m)/8+PI/8,
