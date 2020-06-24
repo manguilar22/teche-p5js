@@ -16,13 +16,13 @@ function draw(){
 
 	ellipse(250,68,155,55);
 
-	circle(70,30,20);
+	circle(70,500,100);
 
-	rect(600,100,150,125);
+	rect(400,200,250,125);
 
-	square(400,400,200);
+	square(400,400,50);
 
-	triangle(90,180, 58, 20, 100, 75);
+	triangle(15,13, 100, 20, 100, 75);
 
 
 	console.log(mouseX,mouseY);
@@ -34,6 +34,6 @@ function draw(){
 
 	const myCurve = QUARTER_PI + PI + (PI/2);
 
-	arc(350, 350, 100, 100, 0,myCurve, PIE);
+	arc(56, 350, 100, 100, 0,myCurve, PIE);
 }
 
